@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+
+group = 'com.gg'
+version = 'beta'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-jdbc')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-web-services')
+    runtimeOnly('mysql:mysql-connector-java')
+    compile fileTree(dir:'libs',include:['*.jar'])
+
+    implementation('org.springframework.boot:spring-boot-starter-data-redis')
+    implementation('redis.clients:jedis')
+
+    implementation('org.springframework.boot:spring-boot-starter-mail')
+
+    implementation('org.apache.cxf:cxf-spring-boot-starter-jaxws:3.2.4')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+}
