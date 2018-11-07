@@ -4,7 +4,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * 定时器案例
@@ -16,11 +15,11 @@ public class SchadulerDemo {
 
     @Scheduled(fixedRate = 60000)
     public void reportCurrentTime() {
-        System.out.println("现在时间：" + dateFormat.format(new Date()));
+        //System.out.println("现在时间：" + dateFormat.format(new Date()));
     }
 
     @Scheduled(cron="*/60 * * * * ?")
     private void process(){
-        System.out.println("定时器测试 "+(count++));
+        //System.out.println("定时器测试 "+(count++));
     }
 }

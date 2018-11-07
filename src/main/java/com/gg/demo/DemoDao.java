@@ -19,7 +19,7 @@ public class DemoDao {
     public List getDsMsg(){
         List mLi=mjt.queryForList("select * from test",new Object[]{});
         List oLi=ojt.queryForList("select * from test",new Object[]{});
-        mLi.add(oLi);
+        mLi.addAll(oLi);
         return mLi;
     }
 }

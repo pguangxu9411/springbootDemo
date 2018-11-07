@@ -1,6 +1,7 @@
 package com.gg.demo;
 
 
+import com.gg.utils.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +17,8 @@ public class DemoController {
         return "Controller测试成功";
     }
     @RequestMapping("/getDsMsg")
-    public String getDsMsg(){
+    public ResponseUtil getDsMsg(){
 
-        return demoService.getDsMsg().toString();
+        return  new ResponseUtil(1,"success",demoService.getDsMsg());
     }
 }

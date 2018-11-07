@@ -1,8 +1,11 @@
 package com.gg.utils;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 /**
  * JSON返回结果工具类
  */
+@JsonSerialize(include=JsonSerialize.Inclusion.NON_NULL)
 public class ResponseUtil {
     private int no;//代码
     private String msg;//正确/错误消息
