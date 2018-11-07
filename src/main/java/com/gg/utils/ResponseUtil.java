@@ -11,14 +11,6 @@ public class ResponseUtil {
     private String msg;//正确/错误消息
     private Object obj;//返回值
 
-    @Override
-    public String toString() {
-        return "{" +
-                "no=" + no +
-                ", msg='" + msg + '\'' +
-                ", obj=" + obj +
-                '}';
-    }
 
     public ResponseUtil(int no, String msg, Object obj) {
         this.no = no;
@@ -53,5 +45,14 @@ public class ResponseUtil {
 
     public void setObj(Object obj) {
         this.obj = obj;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "no=" + no +
+                ", msg='" + msg + '\'' +
+                ", obj=" + obj +
+                '}';
     }
 }
