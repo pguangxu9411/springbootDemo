@@ -18,7 +18,7 @@ import java.util.Enumeration;
 @Component
 public class AopDemo{
     private static Logger logger= LoggerFactory.getLogger(AopDemo.class);
-    //监控各包下以“Controller”结尾的方法
+    //监控各包下以“Controller”命名结尾的public类
     @Pointcut("execution(public * com.gg.*.*Controller.*(..))")
     public void webLog() {
     }
@@ -51,13 +51,13 @@ public class AopDemo{
     @AfterThrowing("webLog()")
     public void afterThrowing(JoinPoint jp){
 
-        System.out.println("方法异常时执行.....");
+        System.out.println("@AfterThrowing异常时执行.....");
     }
 
     //相当于finally块
     @After("webLog()")
     public void doAfter(JoinPoint jp){
-        System.out.println("方法最后执行.....");
+        System.out.println("@After方法执行.....");
     }
 
 }

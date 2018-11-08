@@ -23,26 +23,20 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
-
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-web-services')
-    runtimeOnly('mysql:mysql-connector-java')
-    compile fileTree(dir:'libs',include:['*.jar'])
-
     implementation('org.springframework.boot:spring-boot-starter-data-redis')
-    implementation('redis.clients:jedis')
-
     implementation('org.springframework.boot:spring-boot-starter-mail')
-
+    implementation('org.springframework.boot:spring-boot-starter-aop')
     implementation('org.apache.cxf:cxf-spring-boot-starter-jaxws:3.2.4')
     implementation('commons-fileupload:commons-fileupload:1.3.2')
     implementation('commons-io:commons-io:2.5')
-
-    implementation('org.springframework.boot:spring-boot-starter-aop')
     implementation('ch.qos.logback:logback-classic:1.2.3')
-
+    implementation('redis.clients:jedis')
+    runtimeOnly('mysql:mysql-connector-java')
+    compile fileTree(dir:'libs',include:['*.jar'])
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 }

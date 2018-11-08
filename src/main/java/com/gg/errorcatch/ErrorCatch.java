@@ -19,6 +19,8 @@ public class ErrorCatch implements ErrorController {
         String errorcode = request.getAttribute("javax.servlet.error.status_code").toString();
         Throwable throwable = (Throwable) request.getAttribute("javax.servlet.error.exception");
         String objmsg = null == throwable ? "" : throwable.getMessage();
+        logger.info("错误代码================>>>:"+errorcode);
+        logger.info("错误信息================>>>:"+objmsg);
         return new ResponseUtil(-1, "错误" + errorcode, objmsg);
 
     }
